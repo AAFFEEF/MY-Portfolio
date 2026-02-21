@@ -53,6 +53,8 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  /* Prevent text scaling on landscape rotation */
 }
 
 body {
@@ -63,6 +65,27 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   line-height: 1.65;
+}
+
+/* Base Mobile Touch Optimizations */
+a,
+button,
+input,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+  /* Remove annoying blue flash on mobile taps */
+}
+
+@media (max-width: 768px) {
+
+  a,
+  button {
+    /* Apple minimum recommended touch target size */
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 h1,
