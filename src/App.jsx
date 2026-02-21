@@ -11,6 +11,7 @@ import Footer from './components/Footer';
 
 import AdminLogin from './components/AdminLogin';
 import AdminDashboard from './components/AdminDashboard';
+import ProtectedRoute from './components/ProtectedRoute';
 
 // Extracted the main portfolio view into a separate sub-component to keep routing clean
 function Portfolio() {
@@ -50,7 +51,16 @@ export default function App() {
 
         {/* Admin Portal Routes */}
         <Route path="/admin" element={<AdminLogin />} />
-        <Route path="/admin/dashboard" element={<AdminDashboard />} />
+
+        {/* Protected Dashboard Route */}
+        <Route
+          path="/admin/dashboard"
+          element={
+            <ProtectedRoute>
+              <AdminDashboard />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
     </BrowserRouter>
   );
