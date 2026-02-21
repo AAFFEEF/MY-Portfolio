@@ -16,7 +16,7 @@ export default function AdminDashboard() {
         }
 
         try {
-            const res = await fetch('http://localhost:5000/api/admin/messages', {
+            const res = await fetch('https://my-portfolio-1-m9qa.onrender.com/api/admin/messages', {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
@@ -50,7 +50,7 @@ export default function AdminDashboard() {
 
         const token = localStorage.getItem('adminToken');
         try {
-            const res = await fetch(`http://localhost:5000/api/admin/messages/${id}`, {
+            const res = await fetch(`https://my-portfolio-1-m9qa.onrender.com/api/admin/messages/${id}`, {
                 method: 'DELETE',
                 headers: {
                     'Authorization': `Bearer ${token}`

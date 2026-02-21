@@ -20,7 +20,7 @@ export default function Contact() {
 
         try {
             // 1. Save to MongoDB Backend
-            const response = await fetch('http://localhost:5000/api/contact', {
+            const response = await fetch('https://my-portfolio-1-m9qa.onrender.com/api/contact', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
