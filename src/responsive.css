@@ -1,0 +1,296 @@
+/* ============================================================
+   RESPONSIVE.CSS
+   Full multi-breakpoint system for the portfolio site.
+   Imported after index.css in main.jsx
+   ============================================================ */
+
+/* ─────────────────────────────────────────
+   TABLET  ( ≤ 900px )
+───────────────────────────────────────── */
+@media (max-width: 900px) {
+
+    /* Hero: single-column layout */
+    .hero-grid {
+        grid-template-columns: 1fr !important;
+        gap: 36px !important;
+    }
+
+    /* Avatar goes above text on tablet */
+    .hero-avatar-col {
+        order: -1 !important;
+    }
+
+    /* Slightly smaller avatar */
+    .hero-avatar-wrap {
+        width: 280px !important;
+        height: 314px !important;
+    }
+
+    /* Timeline indentation */
+    .timeline-wrap {
+        padding-left: 48px !important;
+    }
+
+    .timeline-node {
+        left: -48px !important;
+        width: 34px !important;
+        height: 34px !important;
+    }
+
+    .timeline-rail {
+        left: 16px !important;
+    }
+
+    .timeline-foot {
+        margin-left: -48px !important;
+    }
+
+    .timeline-foot-dot {
+        width: 34px !important;
+        height: 34px !important;
+    }
+}
+
+/* ─────────────────────────────────────────
+   LARGE MOBILE  ( ≤ 768px )
+───────────────────────────────────────── */
+@media (max-width: 768px) {
+
+    /* Spacing */
+    :root {
+        --section-pad: 72px !important;
+    }
+
+    .section-base {
+        padding: 72px 20px !important;
+    }
+
+    .section-header {
+        margin-bottom: 44px !important;
+    }
+
+    .section-title {
+        font-size: clamp(1.8rem, 6vw, 2.4rem) !important;
+    }
+
+    .glass-card {
+        border-radius: 20px !important;
+    }
+
+    /* Hero glass card inner padding */
+    .hero-glass-card {
+        padding: 32px 24px !important;
+    }
+
+    /* Hero buttons full width */
+    .hero-btn-row {
+        flex-direction: column !important;
+        align-items: stretch !important;
+    }
+
+    .hero-btn-row .btn {
+        text-align: center;
+    }
+
+    /* Avatar */
+    .hero-avatar-wrap {
+        width: 240px !important;
+        height: 268px !important;
+    }
+
+    /* Projects slider — stack panels vertically */
+    .proj-card-grid {
+        grid-template-columns: 1fr !important;
+        min-height: unset !important;
+    }
+
+    .proj-visual-panel {
+        border-radius: 20px 20px 0 0 !important;
+        padding: 30px 20px !important;
+        min-height: 200px !important;
+    }
+
+    .proj-content-panel {
+        padding: 24px 22px !important;
+    }
+
+    /* Projects longDesc hidden on mobile to save space */
+    .proj-long-desc {
+        display: none !important;
+    }
+
+    /* About: single column */
+    .about-two-col {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* About achievements 2-col stays fine, quick-info auto */
+    .about-quick-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Skills: service cards stack */
+    .skills-service-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Contact: stack */
+    .contact-two-col {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Footer: stack */
+    .footer-top-row {
+        flex-direction: column !important;
+        gap: 24px !important;
+    }
+
+    /* Navbar: contact CTA hidden on tablet to give breathing room */
+    .nav-cta-desktop {
+        display: none !important;
+    }
+}
+
+/* ─────────────────────────────────────────
+   SMALL PHONE  ( ≤ 480px )
+───────────────────────────────────────── */
+@media (max-width: 480px) {
+
+    :root {
+        --section-pad: 56px !important;
+    }
+
+    .section-base {
+        padding: 56px 14px !important;
+    }
+
+    /* Hero */
+    .hero-glass-card {
+        padding: 22px 16px !important;
+    }
+
+    .hero-avatar-wrap {
+        width: 200px !important;
+        height: 224px !important;
+    }
+
+    .hero-stats-row {
+        gap: 16px !important;
+        padding-top: 20px !important;
+        margin-top: 24px !important;
+    }
+
+    .hero-stat-num {
+        font-size: 1.7rem !important;
+    }
+
+    .hero-stat-label {
+        font-size: 0.65rem !important;
+    }
+
+    /* Socials smaller */
+    .social-orb {
+        width: 38px !important;
+        height: 38px !important;
+    }
+
+    /* Timeline very tight */
+    .timeline-wrap {
+        padding-left: 38px !important;
+    }
+
+    .timeline-node {
+        left: -38px !important;
+        width: 28px !important;
+        height: 28px !important;
+        font-size: 0.7rem !important;
+        top: 8px !important;
+    }
+
+    .timeline-rail {
+        left: 12px !important;
+    }
+
+    .timeline-foot {
+        margin-left: -38px !important;
+    }
+
+    .timeline-foot-dot {
+        width: 28px !important;
+        height: 28px !important;
+        font-size: 0.8rem !important;
+    }
+
+    /* Timeline card inner padding */
+    .timeline-card-body {
+        padding: 18px 14px !important;
+    }
+
+    /* Projects */
+    .proj-visual-panel {
+        padding: 22px 16px !important;
+        min-height: 150px !important;
+    }
+
+    .proj-content-panel {
+        padding: 18px 14px !important;
+    }
+
+    .proj-thumb-btn {
+        height: 42px !important;
+        font-size: 0.95rem !important;
+    }
+
+    /* Skills tech grid: 3 cols on phone */
+    .tech-stack-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+
+    .tech-stack-item {
+        padding: 12px 6px !important;
+    }
+
+    .tech-stack-item span:first-child {
+        font-size: 1.3rem !important;
+    }
+
+    .tech-stack-item span:last-child {
+        font-size: 0.65rem !important;
+    }
+
+    /* About achievements: single col */
+    .achievements-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Buttons */
+    .btn {
+        font-size: 0.82rem !important;
+        padding: 0.58rem 1.1rem !important;
+    }
+
+    /* Footer bottom */
+    .footer-bottom-row {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: 4px !important;
+    }
+
+    /* Section subtitle smaller */
+    .section-subtitle {
+        font-size: 0.88rem !important;
+    }
+
+    /* Badge text */
+    .badge {
+        font-size: 0.6rem !important;
+        padding: 3px 9px !important;
+    }
+
+    /* Tag text */
+    .tag {
+        font-size: 0.65rem !important;
+        padding: 3px 8px !important;
+    }
+}
