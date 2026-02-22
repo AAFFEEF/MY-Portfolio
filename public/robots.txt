@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://your-custom-domain.com/sitemap.xml
+Sitemap: https://my-portfolio-aaffeefahmed.vercel.app/sitemap.xml
