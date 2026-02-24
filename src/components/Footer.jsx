@@ -1,90 +1,167 @@
-const navLinks = ['Home', 'About', 'Education', 'Experience', 'Projects', 'Services', 'Contact'];
-const hrefs = ['#hero', '#about', '#education', '#experience', '#projects', '#skills', '#contact'];
-
 export default function Footer() {
-    const scrollTo = (href) => document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
-
     return (
         <footer style={{
-            position: 'relative',
-            borderTop: '1px solid rgba(14,165,233,0.15)',
-            background: 'rgba(255,255,255,0.72)',
-            backdropFilter: 'blur(20px)',
-            WebkitBackdropFilter: 'blur(20px)',
-            padding: '44px 24px 28px',
+            background: '#0f172a',
+            color: '#cbd5e1',
+            padding: '56px 24px 0',
+            fontFamily: 'Outfit, sans-serif',
         }}>
-            <div className="container">
+            <div className="container" style={{ maxWidth: '1100px', margin: '0 auto' }}>
 
-                {/* footer-top-row — stacks on ≤768 */}
-                <div className="footer-top-row" style={{
-                    display: 'flex', flexWrap: 'wrap',
-                    gap: '28px', justifyContent: 'space-between', marginBottom: '36px',
+                {/* Top Row */}
+                <div style={{
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    gap: '40px',
+                    justifyContent: 'space-between',
+                    paddingBottom: '40px',
                 }}>
 
-                    {/* Brand */}
-                    <div>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
-                            <img src="/LOGO 2.svg" alt="AAN Logo" style={{ height: '34px', width: 'auto' }} />
-                            <span style={{ fontFamily: 'Outfit,sans-serif', fontWeight: 800, fontSize: '0.92rem', color: '#0f172a', letterSpacing: '0.05em' }}>
-                                AaffeefAhmed N.
-                            </span>
-                        </div>
-                        <p style={{ fontSize: '0.8rem', color: '#64748b', fontWeight: 500, maxWidth: '200px', lineHeight: 1.6 }}>
-                            MERN Stack Developer &amp; AI Enthusiast. Building intelligent, beautiful products.
+                    {/* Left — Brand */}
+                    <div style={{ minWidth: '180px', flex: '1 1 180px' }}>
+                        <h2 style={{
+                            fontFamily: 'Outfit, sans-serif',
+                            fontWeight: 800,
+                            fontSize: '1.25rem',
+                            color: '#f1f5f9',
+                            letterSpacing: '0.04em',
+                            marginBottom: '6px',
+                        }}>
+                            AAFFEEF AHMED.N
+                        </h2>
+                        <p style={{
+                            fontSize: '0.78rem',
+                            fontWeight: 600,
+                            letterSpacing: '0.12em',
+                            textTransform: 'uppercase',
+                            color: '#94a3b8',
+                            marginBottom: '8px',
+                        }}>
+                            MERN Stack Developer & AI Enthusiast
+                        </p>
+                        <p style={{
+                            fontSize: '0.82rem',
+                            color: '#64748b',
+                            lineHeight: 1.6,
+                            maxWidth: '220px',
+                        }}>
+                            Building exceptional digital experiences
                         </p>
                     </div>
 
-                    {/* Navigation */}
-                    <div>
-                        <p style={{ fontSize: '0.68rem', fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#0284c7', marginBottom: '12px' }}>Navigation</p>
-                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '7px 22px' }}>
-                            {navLinks.map((label, i) => (
-                                <a key={label} href={hrefs[i]}
-                                    onClick={e => { e.preventDefault(); scrollTo(hrefs[i]); }}
-                                    style={{ fontSize: '0.83rem', fontWeight: 600, color: '#475569', textDecoration: 'none', transition: 'color 0.2s' }}
-                                    onMouseEnter={e => e.target.style.color = '#0ea5e9'}
-                                    onMouseLeave={e => e.target.style.color = '#475569'}
-                                >
-                                    {label}
-                                </a>
-                            ))}
+                    {/* Middle — Connect */}
+                    <div style={{ flex: '1 1 180px', textAlign: 'center' }}>
+                        <p style={{
+                            fontSize: '1rem',
+                            fontWeight: 700,
+                            color: '#f1f5f9',
+                            marginBottom: '16px',
+                        }}>
+                            Connect with me
+                        </p>
+                        <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', marginBottom: '14px' }}>
+                            {/* GitHub */}
+                            <a
+                                href="https://github.com/aaffeefahmedn"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                title="GitHub"
+                                style={{ color: '#94a3b8', transition: 'color 0.2s' }}
+                                onMouseEnter={e => e.currentTarget.style.color = '#38bdf8'}
+                                onMouseLeave={e => e.currentTarget.style.color = '#94a3b8'}
+                            >
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                                </svg>
+                            </a>
+
+                            {/* LinkedIn */}
+                            <a
+                                href="https://linkedin.com/in/n-aaffeef-ahmed"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                title="LinkedIn"
+                                style={{ color: '#94a3b8', transition: 'color 0.2s' }}
+                                onMouseEnter={e => e.currentTarget.style.color = '#38bdf8'}
+                                onMouseLeave={e => e.currentTarget.style.color = '#94a3b8'}
+                            >
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                                </svg>
+                            </a>
+
+                            {/* Email */}
+                            <a
+                                href="mailto:n.aaffeefahmed@gmail.com"
+                                title="Email"
+                                style={{ color: '#94a3b8', transition: 'color 0.2s' }}
+                                onMouseEnter={e => e.currentTarget.style.color = '#38bdf8'}
+                                onMouseLeave={e => e.currentTarget.style.color = '#94a3b8'}
+                            >
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                                </svg>
+                            </a>
                         </div>
+                        <p style={{ fontSize: '0.79rem', color: '#64748b' }}>
+                            Available for opportunities &amp; collaborations
+                        </p>
                     </div>
 
-                    {/* Contact */}
-                    <div>
-                        <p style={{ fontSize: '0.68rem', fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#0284c7', marginBottom: '12px' }}>Contact</p>
-                        <div style={{ display: 'flex', flexDirection: 'column', gap: '7px' }}>
-                            {[
-                                { label: 'n.aaffeefahmed@gmail.com', href: 'mailto:n.aaffeefahmed@gmail.com' },
-                                { label: '+91 9655 747 689', href: 'tel:+919655747689' },
-                                { label: 'Tamil Nadu, India', href: '#' },
-                            ].map(c => (
-                                <a key={c.label} href={c.href}
-                                    style={{ fontSize: '0.83rem', fontWeight: 500, color: '#475569', textDecoration: 'none', transition: 'color 0.2s' }}
-                                    onMouseEnter={e => e.target.style.color = '#0ea5e9'}
-                                    onMouseLeave={e => e.target.style.color = '#475569'}
-                                >
-                                    {c.label}
-                                </a>
-                            ))}
-                        </div>
+                    {/* Right — Get In Touch */}
+                    <div style={{ flex: '1 1 180px', textAlign: 'right' }}>
+                        <p style={{
+                            fontSize: '1rem',
+                            fontWeight: 700,
+                            color: '#f1f5f9',
+                            marginBottom: '14px',
+                        }}>
+                            Get In Touch
+                        </p>
+                        <a
+                            href="mailto:n.aaffeefahmed@gmail.com"
+                            style={{
+                                display: 'block',
+                                fontSize: '0.85rem',
+                                color: '#38bdf8',
+                                textDecoration: 'none',
+                                marginBottom: '6px',
+                                transition: 'color 0.2s',
+                            }}
+                            onMouseEnter={e => e.currentTarget.style.color = '#7dd3fc'}
+                            onMouseLeave={e => e.currentTarget.style.color = '#38bdf8'}
+                        >
+                            n.aaffeefahmed@gmail.com
+                        </a>
+                        <p style={{ fontSize: '0.83rem', color: '#64748b' }}>
+                            Based in Chennai, India
+                        </p>
                     </div>
                 </div>
 
                 {/* Divider */}
-                <div style={{ height: '1px', background: 'linear-gradient(90deg,transparent,rgba(14,165,233,0.2),transparent)', marginBottom: '22px' }} />
+                <div style={{
+                    height: '1px',
+                    background: 'rgba(148,163,184,0.12)',
+                    marginBottom: '0',
+                }} />
 
-                {/* footer-bottom-row — stacks on ≤480 */}
-                <div className="footer-bottom-row" style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <p style={{ fontSize: '0.76rem', color: '#94a3b8', fontWeight: 500 }}>
-                        © {new Date().getFullYear()} AaffeefAhmed N. — All rights reserved.
+                {/* Bottom Bar */}
+                <div style={{
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    gap: '8px',
+                    padding: '18px 0',
+                }}>
+                    <p style={{ fontSize: '0.78rem', color: '#475569' }}>
+                        © {new Date().getFullYear()} AAFFEEF AHMED.N . All rights reserved.
                     </p>
-                    <p style={{ fontSize: '0.76rem', color: '#94a3b8', fontWeight: 500 }}>
-                        Built with React &amp; Tailwind CSS ✦
+                    <p style={{ fontSize: '0.78rem', color: '#475569' }}>
+                        Last updated: February 2026
                     </p>
                 </div>
-
             </div>
         </footer>
     );
